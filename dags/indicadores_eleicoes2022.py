@@ -127,7 +127,7 @@ def indicadores_eleicoes2022():
                 'Ec2KeyName': 'paulo_pem',
                 'KeepJobFlowAliveWhenNoSteps': True,
                 'TerminationProtected': False,
-                'Ec2SubnetId': 'subnet-09e443d0fbde630c9'
+                'Ec2SubnetId': 'subnet-04566acb9a4d1e0b5'
             },
 
             Applications=[{'Name': 'Spark'}],
