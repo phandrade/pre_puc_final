@@ -67,7 +67,7 @@ client = boto3.client(
 )
 
 default_args = {
-    'owner': 'Gregori',
+    'owner': 'Paulo',
     'start_date': datetime(2022, 11, 9)
 }
 
@@ -101,11 +101,11 @@ def indicadores_eleicoes2022():
     @task
     def emr_create_cluster():
         cluster_id = client.run_job_flow( # Cria um cluster EMR
-            Name='Automated_EMR_Gregori',
+            Name='Automated_EMR_Paulo',
             ServiceRole='EMR_DefaultRole',
             JobFlowRole='EMR_EC2_DefaultRole',
             VisibleToAllUsers=True,
-            LogUri='s3://prepuceleicoes2022/Automated_EMR_Gregori_logs/',
+            LogUri='s3://prepuceleicoes2022/Automated_EMR_Paulo_logs/',
             ReleaseLabel='emr-6.8.0',
             Instances={
                 'InstanceGroups': [
@@ -124,7 +124,7 @@ def indicadores_eleicoes2022():
                         'InstanceCount': 1,
                     }
                 ],
-                'Ec2KeyName': 'gregori_pem',
+                'Ec2KeyName': 'paulo_pem',
                 'KeepJobFlowAliveWhenNoSteps': True,
                 'TerminationProtected': False,
                 'Ec2SubnetId': 'subnet-0c0fe84fea4012875'
