@@ -20,7 +20,7 @@ spark = ( SparkSession.\
 )
 
 spark.sparkContext.setLogLevel("WARN")
-parquet_folder_path = "s3://prepuceleicoes2022/parquet/eleicoes2022/"
+parquet_folder_path = "s3://prepuceleicoes2022-phandrade/parquet/eleicoes2022/"
 
 # Dataset Completo
 parquet_path_votos = parquet_folder_path+"votos/"

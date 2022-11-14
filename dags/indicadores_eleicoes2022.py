@@ -72,9 +72,9 @@ default_args = {
 }
 
 unzip_args = {
-    'srcbucket': 'prepuceleicoes2022',
+    'srcbucket': 'prepuceleicoes2022-phandrade',
     'srcfolder': 'landing/',
-    'dstbucket': 'prepuceleicoes2022',
+    'dstbucket': 'prepuceleicoes2022-phandrade',
     'dstfolder': 'raw/',
     'maxitens': 100,
     'ext_exten': ('.csv')
@@ -105,7 +105,7 @@ def indicadores_eleicoes2022():
             ServiceRole='EMR_DefaultRole',
             JobFlowRole='EMR_EC2_DefaultRole',
             VisibleToAllUsers=True,
-            LogUri='s3://prepuceleicoes2022/Automated_EMR_Paulo_logs/',
+            LogUri='s3://prepuceleicoes2022-phandrade/Automated_EMR_Paulo_logs/',
             ReleaseLabel='emr-6.8.0',
             Instances={
                 'InstanceGroups': [
@@ -162,7 +162,7 @@ def indicadores_eleicoes2022():
                         'Jar': 'command-runner.jar',
                         'Args': ['spark-submit',
                                 '--deploy-mode', 'cluster',
-                                's3://prepuceleicoes2022/pyscripts/Eleicoes2022_pipeline.py'
+                                's3://prepuceleicoes2022-phandrade/pyscripts/Eleicoes2022_pipeline.py'
                                 ]
                     }
                 }
