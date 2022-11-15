@@ -77,12 +77,12 @@ spark.sparkContext.setLogLevel("WARN")
 
 # ## 1 ler os arquivos raw e formatar o dataset completo à partir da pasta raw/eleicoes2022
 
-raw_folder_path = "s3://prepuceleicoes2022/raw/"
+raw_folder_path = "s3://prepuceleicoes2022-phandrade/raw/"
 raw_sep = ";"
 raw_header = True
 raw_enconding = "latin1"
 
-parquet_folder_path = "s3://prepuceleicoes2022/parquet/eleicoes2022/"
+parquet_folder_path = "s3://prepuceleicoes2022-phandrade/parquet/eleicoes2022/"
 
 data = spark.read.option("encoding", raw_enconding).csv(path=raw_folder_path, sep=raw_sep, header=raw_header)
 
