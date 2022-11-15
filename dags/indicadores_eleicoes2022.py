@@ -141,10 +141,7 @@ def indicadores_eleicoes2022():
 
         waiter.wait(
             ClusterId=cid,
-            WaiterConfig={
-                'Delay': 30,
-                'MaxAttempts': 60
-            }
+            WaiterConfig={ 'Delay': 30, 'MaxAttempts': 60 }
         )
         return True
 
@@ -178,8 +175,8 @@ def indicadores_eleicoes2022():
             ClusterId=cid,
             StepId=stepId,
             WaiterConfig={
-                'Delay': 10,
-                'MaxAttempts': 600
+                "Delay": 10,
+                "MaxAttempts": 600
             }
         )
     
